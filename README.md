@@ -6,7 +6,9 @@ printf - A printf function
 
 ## Description
 
-This project recreates a printf function that is able to print out formats of type char (c), string (s), percentage symbol (%% = %), signed decimal integers (d), integers (I). 
+This project recreates a printf function will print out formats of, <br/>
+type char (c), string (s), percentage symbol (%% = %), signed decimal <br/>
+integers (d), integers (I).
 
 * Function that produces output according to a format specified
 * Write output to stdout, the standard output stream
