@@ -4,7 +4,7 @@
 
 /**
  * print_char - print char
- * @args: Arguments
+ * @all_parameters: Arguments
  * Return: int
  */
 
@@ -16,27 +16,27 @@ int print_char(va_list all_parameters)
 
 /**
  * print_string - print string
- * @args: arguments
+ *
+ * @all_parameters: arguments
  * Return: int
  */
 
 int print_string(va_list all_parameters)
-
-char *s;
-s = va_arg(all_parameters, char);
 {
-	i = 0;
+	char *s;
+	s = va_arg(all_parameters, char);
 
-	while (i < *s)
-		_putchar(s);
-	i++;
+	if (!s)
+		i = i + _puts("(null)");
+	else
+		i = i + _puts(s);
 	return (i);
 }
 
 /**
  * print_percent - prints percentage sign
  *
- * @c: character representing percent sign
+ * @all_parameters: arguments in function
  * Return: int
  */
 
@@ -60,4 +60,22 @@ int print_percent(va_list all_parameters)
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
+}
+
+/**
+ * _puts - function used to place characters in string
+ *
+ * @str: String being printed
+ * Return: i which is the value for the string
+ */
+
+int _puts(char *str)
+{
+	int i = 0;
+
+	for ( ; *(str + i); i++)
+	{
+		_putchar(str[i]);
+	}
+	return (i);
 }
