@@ -1,53 +1,50 @@
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "variadic_functions.h"
+#include "holberton.h"
 
 /* define the format string in helper function file */
 
 /**
  * print_char - print char
  * @args: Arguments
- * Return: void
+ * Return: int
  */
-void _printf_char(va_list all_parameters)
+
+int print_char(va_list all_parameters)
 {
-       _printf("%c", va_arg(all_parameters, int));
+       _putchar(va_arg(all_parameters, int));
+       return (1);
 }
 
 /**
  * print_string - print string
  * @args: arguments
- * Return: void
+ * Return: int
  */
 
-void print_string(va_list all_parameters)
-{
-        char *str = va_arg(all_parameters, int *);
+int print_string(va_list all_parameters)
 
-        if (!str)
-        {
-                printf("(nil)");
-                return;
-        }
-        printf("%s", str);
+char *s;
+s = va_arg(all_parameters, char);
+{
+	i = 0;
+
+	while (i < *s)
+		_putchar(s);
+	i++;
+	return (i);
 }
 
 /**
  * print_percent - prints percentage sign
  *
  * @c: character representing percent sign
- * Return: void
+ * Return: int
  */
 
-void print_percent(va_list all parameters)
+int print_percent(va_list all_parameters)
 {
-
-	/* Get the character to be written */
-
+/* Get the character to be written */
 	char c = '%';
-
-	/* Write the Character to stdout */
+/* Write the Character to stdout */
 	_putchar(c);
 }
 
