@@ -46,6 +46,7 @@ int print_percent(va_list all_parameters)
 	char c = '%';
 /* Write the Character to stdout */
 	_putchar(c);
+	return (1);
 }
 
 /**
