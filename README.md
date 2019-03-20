@@ -1,12 +1,14 @@
 # 0x10. C - printf
 ---
-## Name
+## by Julien Barbier, co-founder at Holberton School
 
 printf - A printf function
 
 ## Description
 
-This project recreates a printf function that is able to print out formats of type char (c), string (s), percentage symbol (%% = %), signed decimal integers (d), integers (I). 
+This project recreates a printf function will print out formats of, <br/>
+type char (c), string (s), percentage symbol (%% = %), signed decimal <br/>
+integers (d), integers (I).
 
 * Function that produces output according to a format specified
 * Write output to stdout, the standard output stream
@@ -22,10 +24,41 @@ This project recreates a printf function that is able to print out formats of ty
 
 ##### Example 1 | Number 0
 
+```
+/**
+ * _printf - Pared down printf with variable arg list
+ * @format: format arguments
+ * Return: Number of chars printed excluding the null byte
+ */
+int _printf(const char *format, ...)
+{
+	specifier_t structs_ar[] = {
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_percent},
+	{'d', print_integer},
+	{'i', print_integer},
+	{'\0', NULL}
+	};
+```
 ##### Example 2 | Number 1
 
 ```
+void print_unsigned(int n)
+{
+	unsigned int n1;
 
+	if (n < 0)
+	{
+		_putchar('-');
+			n1 = -n;
+			}
+			else
+				n1 = n;
+				if (n1 / 10)
+				   print_unsigned(n1 / 10);
+				   _putchar((n1 % 10) + '0');
+}
 ```
 
 ### List of allowed functions and system calls
