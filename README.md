@@ -23,6 +23,8 @@ integers (d), integers (I).
   - exit (exits the shell).
 
 ##### Example 1 | Number 0
+
+```
 /**
  * _printf - Pared down printf with variable arg list
  * @format: format arguments
@@ -38,7 +40,7 @@ int _printf(const char *format, ...)
 	{'i', print_integer},
 	{'\0', NULL}
 	};
-
+```
 ##### Example 2 | Number 1
 
 ```
