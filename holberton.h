@@ -6,12 +6,11 @@
 /* typedef used to name user defined data types */
 
 /**
- * printf - function that produces output according to a format
+ * struct specifier - function that produces output according to a format
  *
- * @type: Format to print
- * @f: The function pointer to the specifier
+ * @spec: Format to print
+ * @function_ptr: The function pointer to the specifier
  */
-
 typedef struct specifier
 {
 	char spec;
@@ -24,7 +23,8 @@ int print_char(va_list all_parameters);
 int print_string(va_list all_parameters);
 int print_percent(va_list all_parameters);
 int print_integer(va_list all_parameters);
-void print_unsigned(int n);
+void print_unsign(int n);
 int counter(int j);
 int _puts(char *str);
+int get_struct(char c, va_list all_parameters);
 #endif /* HOLBERTON_H */

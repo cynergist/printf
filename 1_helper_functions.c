@@ -1,13 +1,13 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * print_unsigned - print unsigned int
+ * print_unsign - print unsigned int
  * @n: an int
  *
  * Return: int otherwise -1
  */
 
-void print_unsigned(int n)
+void print_unsign(int n)
 {
 	unsigned int n1;
 
@@ -19,12 +19,12 @@ void print_unsigned(int n)
 	else
 		n1 = n;
 	if (n1 / 10)
-		print_unsigned(n1 / 10);
+		print_unsign(n1 / 10);
 	_putchar((n1 % 10) + '0');
 }
 
 /**
- * int counter - print integer
+ * counter - print integer
  * @j: counter of argument
  * Return: int otherwise -1
  */
@@ -51,10 +51,10 @@ int print_integer(va_list all_parameters)
 {
 	int i = va_arg(all_parameters, int);
 	int count = 0;
-	
+
 	count = counter(i);
 	if (i <= 0)
 		count++;
-	print_unsigned(i);
+	print_unsign(i);
 	return (count);
 }
