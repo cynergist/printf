@@ -1,38 +1,34 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "holberton.h"
+#include <stdio.h>
+
 /**
  * _printf - Pared down printf with variable arg list
  * @format: format arguments
- * Return: pointer to the
+ * Return: Number of chars printed excluding the null byte
  */
-int _printf(const char * format, ...)
+int _printf(const char *format, ...)
 {
 	specifier_t structs_ar[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
-		{"d", print_int},
-		{"i", print_int},
+		{"d", print_integer},
+		{"i", print_integer},
 		{"\0", NULL}
 	};
 	/* points to each unnamed arg in turn */
 	va_list all_parameters;
-	/* this value is for the iterators and string value */
 	char i, j;
-	/* this value is for the integer and for the count */
 	int count = 0;
 
 	va_start(all_parameters, format);
-	/* make all_parameters point to 1st unnamed arg */
+/* All below are validation statements */
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-
-	if (_printf("%s", NULL))
-		{
-			return ("(nil)");
-		}
-/* All above are validation statements */
+	if (_printf("%s", va_arg(all_parameters, char *)))
+	{
+		return (0);
+	}
 	i = 0;
 
 	while (format && format[i])
@@ -46,10 +42,8 @@ int _printf(const char * format, ...)
 		}
 		j++;
 	} i++;
-
 /* Cleans up the list */
 	va_end(all_parameters);
-/*Write output to stdout, the standard output stream */
 /* Returns char count here */
 	return (count);
 }

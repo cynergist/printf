@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /* define the format string in helper function file */
 
@@ -10,8 +11,8 @@
 
 int print_char(va_list all_parameters)
 {
-       _putchar(va_arg(all_parameters, int));
-       return (1);
+	_putchar(va_arg(all_parameters, int));
+	return (1);
 }
 
 /**
@@ -24,7 +25,10 @@ int print_char(va_list all_parameters)
 int print_string(va_list all_parameters)
 {
 	char *s;
-	s = va_arg(all_parameters, char);
+
+	s = va_arg(all_parameters, char *);
+
+	int i = 0;
 
 	if (!s)
 		i = i + _puts("(null)");
