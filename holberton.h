@@ -23,7 +23,7 @@ int print_char(va_list all_parameters);
 int print_string(va_list all_parameters);
 int print_percent(va_list all_parameters);
 int print_integer(va_list all_parameters);
-void print_unsign(int n);
+int print_unsign(int n);
 int counter(int j);
 int _puts(char *str);
 int get_struct(char c, va_list all_parameters);

@@ -7,9 +7,10 @@
  * Return: int otherwise -1
  */
 
-void print_unsign(int n)
+int print_unsign(int n)
 {
 	unsigned int n1;
+	int c = 0;
 
 	if (n < 0)
 	{
@@ -19,8 +20,9 @@ void print_unsign(int n)
 	else
 		n1 = n;
 	if (n1 / 10)
-		print_unsign(n1 / 10);
+		c = print_unsign(n1 / 10);
 	_putchar((n1 % 10) + '0');
+	return (1 + c);
 }
 
 /**
@@ -55,6 +57,5 @@ int print_integer(va_list all_parameters)
 	count = counter(i);
 	if (i <= 0)
 		count++;
-	print_unsign(i);
-	return (count);
+	return (count + print_unsign(i) - 1);
 }
