@@ -2,7 +2,6 @@
 #define HOLBERTON_H
 #include <stdarg.h>
 #include <stdio.h>
-#include "holberton.h"
 
 /* typedef used to name user defined data types */
 
@@ -15,7 +14,7 @@
 
 typedef struct specifier
 {
-	char *spec;
+	char spec;
 	int (*function_ptr)(va_list);
 } specifier_t;
 
@@ -25,5 +24,7 @@ int print_char(va_list all_parameters);
 int print_string(va_list all_parameters);
 int print_percent(va_list all_parameters);
 int print_integer(va_list all_parameters);
+void print_unsigned(int n);
+int counter(int j);
 int _puts(char *str);
 #endif /* HOLBERTON_H */

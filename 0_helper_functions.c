@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <unistd.h>
 /* define the format string in helper function file */
 
 /**
@@ -25,10 +26,9 @@ int print_char(va_list all_parameters)
 int print_string(va_list all_parameters)
 {
 	char *s;
+	int i = 0;
 
 	s = va_arg(all_parameters, char *);
-
-	int i = 0;
 
 	if (!s)
 		i = i + _puts("(null)");
@@ -46,8 +46,9 @@ int print_string(va_list all_parameters)
 
 int print_percent(va_list all_parameters)
 {
-/* Get the character to be written */
 	char c = '%';
+
+	(void) all_parameters;
 /* Write the Character to stdout */
 	_putchar(c);
 	return (1);
